@@ -7,12 +7,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 
-import com.javajokes.JokeTeller;
-
 
 public class MainActivity extends AppCompatActivity {
 
-    public static String JOKE = "joke";
     private ProgressBar spinner;
 
     @Override
@@ -49,8 +46,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void tellJoke(View view) {
         spinner.setVisibility(View.VISIBLE);
-        JokeTeller jokeTeller = new JokeTeller();
-        JOKE = jokeTeller.tellJoke();
         //  Toast.makeText(this, jokeTeller.tellJoke(), Toast.LENGTH_SHORT).show();
         EndpointsAsyncTask getTask = new EndpointsAsyncTask();
         getTask.execute(getApplicationContext());
